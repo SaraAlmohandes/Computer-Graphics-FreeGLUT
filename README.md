@@ -1,1 +1,1 @@
-# Some basic shapes in Computer graphics using freeGLUT
+# Some basic 2D shapes in Computer graphics using freeGLUT
