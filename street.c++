@@ -1,7 +1,9 @@
+/* Creating a street using freeglut */
+
 #include<GL/freeglut.h>
 #include<GL/gl.h>
 
-void dotted_X ()
+void street ()
 {
     glClearColor(0.4, 0.4, 0.4, 0); //Making the background gray
     glClear(GL_COLOR_BUFFER_BIT);
@@ -14,10 +16,10 @@ void dotted_X ()
         {
             if (i%2) //Ending the white line and starting the black one
             {
-                glVertex2d(i, 300);
+                glVertex2d(i, 300); //End point of the white block
 
                 glColor3f(0, 0, 0);
-                glVertex2d(i, 300);
+                glVertex2d(i, 300); //Start point of the black block
             }
             else //Ending the black line and starting the white one
             {
@@ -28,16 +30,16 @@ void dotted_X ()
                 }
                 else
                 {
-                    glVertex2d(i, 300);
+                    glVertex2d(i, 300); //End point of the black block
 
                     glColor3f(1, 1, 1);
-                    glVertex2d(i, 300);
+                    glVertex2d(i, 300); //Start point of the white block
                 }
             }
         }
-        glEnd();
+    glEnd();
 
-        glBegin(GL_LINES);
+    glBegin(GL_LINES);
         //Same as the above loop but to create the other line
         for (int i = 100; i <= 400; i += 15)
         {
@@ -73,14 +75,14 @@ void dotted_X ()
             glColor3f(1, 1, 1);
             if (!(i%2))
             {
-                glVertex2d(i, 250);
+                glVertex2d(i, 250); //Start point then end point and so on
             }
 
         }
     glEnd();
 
 
-        glFlush();
+    glFlush();
 }
 
 int main(int argc, char *argv[])
@@ -90,9 +92,9 @@ int main(int argc, char *argv[])
 
     glutInitWindowPosition(500, 500);
     glutInitWindowSize(500, 500);
-    glutCreateWindow("Lines");
+    glutCreateWindow("Street");
     gluOrtho2D(0, 500, 0, 500);
-    glutDisplayFunc(dotted_X);
+    glutDisplayFunc(street);
     glutMainLoop();
 }
 

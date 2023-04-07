@@ -3,17 +3,19 @@
 
 void lines ()
 {
-    glClearColor(0, 0, 0, 0);
+    glClearColor(0, 0, 0, 0); //For black background
     glClear(GL_COLOR_BUFFER_BIT);
 
     glBegin(GL_LINES);
-        glColor3f(1, 0, 0);
-        glVertex2f(100, 250);
-        glVertex2f(400, 250);
+        //First line
+        glColor3f(1, 0, 0); //For red line
+        glVertex2f(100, 250); //Start point
+        glVertex2f(400, 250); //End point
 
-        glColor3f(0, 0, 1);
-        glVertex2d(100, 150);
-        glVertex2d(400, 150);
+        //Second line
+        glColor3f(0, 0, 1); //For blue line
+        glVertex2d(100, 150); //Start point
+        glVertex2d(400, 150); //End point
     glEnd();
 
     glFlush();

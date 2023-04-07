@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
     glutInitWindowPosition(100, 100);
     glutInitWindowSize(600, 600);
-    glutCreateWindow("OpenGL - Creating a triangle");
+    glutCreateWindow("Basic code");
     gluOrtho2D(0,200,0,200);
     glutDisplayFunc(mydisplay);
     glutMainLoop();
