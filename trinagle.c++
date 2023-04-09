@@ -58,6 +58,27 @@ void triangle3() //Create triangle using TRIANGLES
     glFlush();
 }
 
+void triangle4() //Create 2 triangles using TRIANGLE_STRIP
+{
+    glClearColor(0, 0, 0, 0); //Create black background
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glLineWidth(3);
+    glBegin(GL_TRIANGLE_STRIP); //Creates colored triangle from inside
+        glColor3d(1, 1, 0); //Yellow Trinagle
+        glVertex2d(200, 200); //Creating the right point
+        glVertex2d(300, 200); //Creating the left point
+        glVertex2d(250, 300); //Creating the top point
+
+        glColor3d(0, 0, 1); //Blue Triangle
+        glVertex2d(350, 200); //Creating the right point
+        glVertex2d(400, 200); //Creating the left point
+        glVertex2d(375, 300); //Creating the top point
+    glEnd();
+
+    glFlush();
+}
+
 int main(int pargc, char **argv)
 {
     glutInit(&pargc, argv);
@@ -67,7 +88,7 @@ int main(int pargc, char **argv)
     glutInitWindowSize(500, 500);
     glutCreateWindow("Triangle");
     gluOrtho2D(0, 500, 0, 500);
-    glutDisplayFunc(triangle3);
+    glutDisplayFunc(triangle1);
     glutMainLoop();
 }
 
